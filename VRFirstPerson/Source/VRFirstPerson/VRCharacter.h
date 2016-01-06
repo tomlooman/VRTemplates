@@ -22,6 +22,14 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "VR")
 	bool bPositionalHeadTracking;
 
+	/* Motion Controllers */
+
+	UPROPERTY(EditDefaultsOnly, Category = "Components")
+	class UMotionControllerComponent* LeftHandComponent;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Components")
+	class UMotionControllerComponent* RightHandComponent;
+
 public:
 	// Sets default values for this character's properties
 	AVRCharacter();

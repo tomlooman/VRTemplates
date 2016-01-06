@@ -5,6 +5,7 @@
 /* VR Includes */
 #include "HeadMountedDisplay.h"
 #include "IHeadMountedDisplay.h"
+#include "MotionControllerComponent.h"
 
 #include "VRCharacter.h"
 
@@ -21,6 +22,14 @@ AVRCharacter::AVRCharacter()
 	CameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComponent"));
 	/* Assign to the VR origin component so any reset calls to the HMD can reset to 0,0,0 relative to this component */
 	CameraComp->AttachParent = VROriginComp;
+
+	LeftHandComponent = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("LeftHand"));
+	LeftHandComponent->Hand = EControllerHand::Left;
+	LeftHandComponent->AttachParent = VROriginComp;
+
+	RightHandComponent = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("RightHand"));
+	RightHandComponent->Hand = EControllerHand::Right;
+	RightHandComponent->AttachParent = VROriginComp;
 
 	bPositionalHeadTracking = false;
 }
