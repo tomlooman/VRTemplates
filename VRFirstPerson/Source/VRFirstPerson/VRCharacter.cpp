@@ -4,7 +4,6 @@
 
 /* VR Includes */
 #include "HeadMountedDisplay.h"
-#include "IHeadMountedDisplay.h"
 #include "MotionControllerComponent.h"
 
 #include "VRCharacter.h"
